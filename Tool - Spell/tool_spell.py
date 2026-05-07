@@ -4,7 +4,7 @@ import re
 import string
 import json
 
-def typewriter(text, delay=0.01):
+def typewriter(text, delay=0.00):
     for ch in text:
         sys.stdout.write(ch)
         sys.stdout.flush()
@@ -12,41 +12,34 @@ def typewriter(text, delay=0.01):
     print()
 
 def show_menu():
-    typewriter("\n===== Hack Casio =====", 0.02)
+    typewriter("\n===== HACK CASIO =====", 0.01)
     time.sleep(0.5)
-    typewriter("Tool Spell trên CASIO fx-580VN X", 0.02)
-    typewriter("- Bản quyền © Hack Casio -", 0.02)
-    typewriter("1. Lưu ý", 0.02)
-    typewriter("2. Liên hệ", 0.02)
-    typewriter("3. Spell Var", 0.02)
+    typewriter("Tool Spell on CASIO fx-580VN X", 0.01)
+    typewriter("- © 2026 HACK CASIO -", 0.01)
+    typewriter("1. Note", 0.02)
+    typewriter("2. Contact", 0.02)
+    typewriter("3. Spell", 0.02)
 
 def show_notes():
-    typewriter("\n===== Lưu ý sử dụng! =====", 0.02)
+    typewriter("\n===== Note =====", 0.02)
     notes = [
-        "1. Khi spell chỉ được spell tối đa 17 kí tự nếu nhiều hơn sẽ không spell được!",
-        "2. Không được phụ thuộc vào tool!",
-        "3. Tool này hoàn toàn miễn phí không được bán bot để kiếm lời!",
-        "4. Tôn trọng tool và người tạo ra tool!",
-        "5. Không được sao chép tool dưới mọi hình thức!",
-        "6. Tool đôi khi sẽ bị lỗi vui lòng cân nhắc trước khi sử dụng!",
-        "7. Tool chỉ dành cho CASIO fx-580VN X các loại máy khác sẽ không làm được!",
-        "8. Không được sửa tên người tạo ra Tool!",
-        "9. Nếu trong quá trình sử dụng tool bị lỗi chỗ nào vui lòng liên hệ để được hỗ trợ!"
+    "1. Tool hoàn toàn miễn phí, nghiêm cấm buôn bán hoặc sử dụng để trục lợi.",
+    "2. Không được chỉnh sửa hoặc xóa tên tác giả.",
+    "3. Nghiêm cấm sao chép hoặc phát tán trái phép dưới mọi hình thức.",
+    "4. Tool chỉ hỗ trợ spell tối đa 17 byte và ký tự.",
+    "5. Chỉ hỗ trợ CASIO fx-580VN X, các dòng máy khác có thể không hoạt động.",
+    "6. Không nên phụ thuộc hoàn toàn vào tool.",
+    "7. Tool có thể phát sinh lỗi trong quá trình sử dụng.",
+    "8. Nếu gặp lỗi, vui lòng liên hệ để được hỗ trợ."
     ]
     for note in notes:
-        typewriter(f"  • {note}", 0.01)
+        typewriter(f"  • {note}", 0.00)
 
 def show_contacts():
-    typewriter("\n===== Liên hệ! =====", 0.02)
+    typewriter("\n===== Contact =====", 0.02)
     contacts = [
-        "Coder Feature & FixCode: Phong2k11®",
-        "Discord: Phong2k11®",
-        "TikTok: Phong2k11®",
-        "YouTube: Phong2k11",
-        "Coder Tool Spell & Update: AxesMC",
-        "Discord: C++ My Life(@kiet130218_80627) or Kiet1302181(@kiet1302181)",
-        "Tiktok: AxesMC or @typedcello07585",
-        "Youtube: AxesMC"
+        "Discord: Phong2k11®(phong2k11_4).",
+        "Discord: C++ My Life(@kiet130218_80627) or Kiet1302181(@kiet1302181)."
     ]
     for info in contacts:
         typewriter(f"  • {info}", 0.02)
@@ -152,12 +145,10 @@ def fill(hex_list):
         return filled, id, True
 
 def spell_input():
-    typewriter("Nhập câu bạn muốn spell trên CASIO fx-580VN X: ", 0.04)
-    time.sleep(0.04)
-    cau = input()
+    cau = input("Nhập câu spell:")
     while len(cau) > 17:
-        typewriter("Câu nhập quá 17 kí tự! Vui lòng nhập lại: ", 0.04)
-        cau = input()
+        typewriter("Câu không hợp lệ.", 0.04)
+        cau = spell_input()
     ds_chu = list(cau)
     spaces = 17 - len(cau)
     # Căn lề giữa cho câu:
@@ -231,19 +222,19 @@ def spell_input():
     list_lo = []  # Danh sách
     filled, id, status = fill(hex_list)
     if not status:
-        typewriter("Số kí tự quá nhiều bytes, vui lòng nhập câu khác !", 0.04)
+        typewriter("Lỗi quá nhiều byte.", 0.01)
     for i in filled:
         list_lo.append(i)
     # Lấp hex_list vào A, B, C
-    typewriter("Bước 1: Reset máy: \n [shift] [9] [3] [=] [=]", 0.03)
-    typewriter("Bước 2: Vào LineI/O: \n [shift] [menu] [1] [3]")
-    typewriter("Bước 3: Vào Basic Overflow: \n [x] [alpha] [CALC] [shift] [x] [x] [shift] [)] [9] [shift] [)] [9] [9] [9] [CALC] [=] [AC] [<] [del] [del] [CALC] [=] [<] [shift] [.]", 0.04)
-    typewriter("Bước 4: Lấy kí tự Hex cần thiết: ", 0.02)
+    typewriter("Bước 1: Reset máy: \n [shift] [9] [3] [=] [=]", 0.01)
+    typewriter("Bước 2: Vào LineI/O: \n [shift] [menu] [1] [3]", 0.01)
+    typewriter("Bước 3: Vào Basic Overflow: \n [x] [alpha] [CALC] [shift] [x] [x] [shift] [)] [9] [shift] [)] [9] [9] [9] [CALC] [=] [AC] [<] [del] [del] [CALC] [=] [<] [shift] [.]", 0.00)
+    typewriter("Bước 4: Lấy kí tự Hex cần thiết: ", 0.01)
     for ki_tu_hex in hex_chars:
         print(found_hex_chars.get(ki_tu_hex, ""), end=" ")
         count += 1
-    typewriter(f" \n ([<] [9] [DEL])×{count} [del] [del] [del] ([<])×{count} [alpha] [∫]")
-    typewriter("Bước 5: Gán hex: ", 0.03)
+    typewriter(f"([<] [9] [DEL])×{count} [del] [del] [del] ([<])×{count} [alpha] [∫]")
+    typewriter("Bước 5: Gán hex: ", 0.01)
     count = 0  # Reset biến count để đếm lần 
     for i in list_lo[:]:
         if i == "A = " or i == "B = " or i == "C = ":
@@ -264,7 +255,7 @@ def spell_input():
         else:
             for ki_tu in byte:
                 if ki_tu.isdigit():
-                    print(f"[{ki_tu}]", end=" ")
+                    print(f" [{ki_tu}]", end=" ")
                 elif ki_tu in ["A", "B", "C", "D", "E", "F"]:
                     print("[>]", end=" ")
                 elif ki_tu == ".":
@@ -272,21 +263,21 @@ def spell_input():
                 elif byte == "×10":
                     print("[×10]", end=" ")
                     break
-    typewriter(f" \n [CALC] ([=])x{id + 2}", 0.04)
-    typewriter("Bước 6: Lấy 'an': \n [x] [alpha] [CALC] [shift] [x] [x] [shift] [)] [9] [shift] [)] [9] [CALC] [=] [<] [shift] [.] [shift] [.] [<] [<] [DEL] [v] [shift] [8] [v] [2] [6] [<] [<] [>] [9] [DEL] [<] [)] [+] [100 số bất kì]\n[CALC] [=]", 0.04)
-    typewriter("Bước 7: Lấy '@': \n [x] [alpha] [CALC] [shift] [x] [x] [shift] [)] [9] [shift] [)] [9] [CALC] [=] [<] [shift] [.]", 0.02)
+    typewriter(f"[CALC] ([=])×{id + 2}", 0.02)
+    typewriter("Bước 6: Lấy 'an': \n [x] [alpha] [CALC] [shift] [x] [x] [shift] [)] [9] [shift] [)] [9] [CALC] [=] [<] [shift] [.] [shift] [.] [<] [<] [DEL] [v] [shift] [8] [v] [2] [6] [<] [<] [>] [9] [DEL] [<] [)] [+] [100 số bất kì] [CALC] [=]", 0.01)
+    typewriter("Bước 7: Lấy '@': \n [x] [alpha] [CALC] [shift] [x] [x] [shift] [)] [9] [shift] [)] [9] [CALC] [=] [<] [shift] [.]", 0.01)
     if id == 0:
-        typewriter('[shift] [7] [4] [8]', 0.03)
+        typewriter('[shift] [7] [4] [8]', 0.02)
         typewriter('([<] [9] [DEL])×1\n[DEL]×10', 0.02)
-        typewriter('[<] [9 số bất kì] [>] [alpha] [∫] [>] [alpha] [CALC] [alpha] [(-)]\n[CALC] ([=])×2 [^]', 0.04)
+        typewriter('[<] [9 số bất kì] [>] [alpha] [∫] [>] [alpha] [CALC] [alpha] [(-)]\n[CALC] ([=])×2 [^]', 0.01)
     elif id == 1:
         typewriter('[shift] [7] [4] [8] [shift] [7] [4] [9]', 0.02)
         typewriter('([<] [9] [DEL])×2\n[DEL]×10', 0.02)
-        typewriter('[<] [9 số bất kì] [>] [alpha] [∫] [>] [alpha] [CALC] [alpha] [(-)] [alpha] [∫] [>] [alpha] [CALC] [alpha] [□ \' "]\n[CALC] ([=])×3 [^]', 0.04)
+        typewriter('[<] [9 số bất kì] [>] [alpha] [∫] [>] [alpha] [CALC] [alpha] [(-)] [alpha] [∫] [>] [alpha] [CALC] [alpha] [□ \' "]\n[CALC] ([=])×3 [^]', 0.01)
     elif id == 2:
-        typewriter('[shift] [7] [4] [8] [shift] [7] [4] [9] [shift] [7] [1] [4]', 0.04)
-        typewriter('([<] [9] [DEL])×3\n[DEL]×10', 0.03)
-        typewriter('[<] [9 số bất kì] [>] [alpha] [∫] [>] [alpha] [CALC] [alpha] [(-)] [alpha] [∫] [>] [alpha] [CALC] [alpha] [□ \' "] [alpha] [∫] [>] [alpha] [CALC] [alpha] [x^-1]\n[CALC] ([=])×4 [^]', 0.04)
+        typewriter('[shift] [7] [4] [8] [shift] [7] [4] [9] [shift] [7] [1] [4]', 0.02)
+        typewriter('([<] [9] [DEL])×3\n[DEL]×10', 0.01)
+        typewriter('[<] [9 số bất kì] [>] [alpha] [∫] [>] [alpha] [CALC] [alpha] [(-)] [alpha] [∫] [>] [alpha] [CALC] [alpha] [□ \' "] [alpha] [∫] [>] [alpha] [CALC] [alpha] [x^-1]\n[CALC] ([=])×4 [^]', 0.01)
     typewriter('Bước 8: Xóa bytes thừa:', 0.02)
     list_lo.reverse()
     if " x:\n" in list_lo:
@@ -315,7 +306,7 @@ def spell_input():
             pass
         else:
             count += 1
-    typewriter("\nBước 9: Gán chữ: ")
+    typewriter("\nBước 9: Nhập chữ: ")
     b = 0  # Biến đếm khi có kí tự 2 bytes
     for char in ds_chu:
         if char in found_keys:
@@ -323,20 +314,20 @@ def spell_input():
         elif char not in found_keys:
             # Tại sao dấu cách không có trong found_keys ? Do idk :)))
             if char == " ":
-                typewriter("[shift] [8] [3] [4]", 0.04)
+                typewriter("[shift] [8] [3] [4]", 0.02)
                 b+=1
             elif char not in all_ascii_chars:
-                typewriter("[>]", 0.04)
+                typewriter("[>]", 0.02)
                 time.sleep(0.8)
                 b+=1 #Do không nằm trong kí tự Tiếng Anh và các kí tự ascii
             elif char in all_ascii_chars:
                 if char in chars_by_hex:
-                    typewriter("[>]",0.04)
-                    time.sleep(0.8)
-    typewriter(f" \n [{17-b} số bất kì] [shift] [(] [2] [x], việc còn lại là bấm [calc] [=]")
-    typewriter("-----HẾT-----")
-    typewriter("Coder Feature & FixCode: Phong2k11®", 0.04)
-    typewriter("Coder Tool Spell & Update: AxesMC", 0.04)
+                    typewriter("[>]",0.01)
+                    time.sleep(0.01)
+    typewriter(f"[{17-b} số bất kì] [shift] [(] [2] [x] [calc] [=]")
+    typewriter("--- End ---", 0.01)
+    typewriter("- Developed by Phong2k11® & AxesMC -", 0.01)
+
 def main():
     show_menu()  # Hiện menu
     while True:
@@ -348,7 +339,7 @@ def main():
         elif choice == "3":
             spell_input()
         else:
-            typewriter("Lựa chọn không hợp lệ, vui lòng thử lại...", 0.04)
+            typewriter("Lựa chọn không hợp lệ.", 0.01)
 
 if __name__ == "__main__":
     main()
