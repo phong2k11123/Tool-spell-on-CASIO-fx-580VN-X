@@ -206,7 +206,7 @@ def spell_input():
     hex_chars.append("C")
     hex_list.append("3C")
     hex_list.append("23")
-    with open("chars_key.json", "r", encoding="utf-8") as f:
+    with open("takechars.txt", "r", encoding="utf-8") as f:
         lines = f.readlines()
         found = False
         for line in lines:
