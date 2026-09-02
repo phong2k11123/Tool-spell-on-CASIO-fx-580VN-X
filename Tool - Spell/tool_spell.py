@@ -174,10 +174,10 @@ def spell_input():
             chars_by_hex.append(ki_tu)
         elif ki_tu not in chars_hex and ki_tu in all_ascii_chars:  # Nếu kí tự không nằm trong chars_hex nhưng là ascii
             chars_by_key.append(ki_tu)
-        elif ki_tu not in chars_hex and ki_tu not in all_ascii_chars and ki_tu != " ":
+        elif ki_tu not in chars_hex and ki_tu not in all_ascii_chars and ki_tu != " " and not ki_tu.isdigit():
             if ki_tu != "!":
                 chars_by_hex.append(ki_tu)
-        elif ki_tu == "!":
+        elif ki_tu == "!" and not ki_tu.isdigit():
             chars_by_key.append(ki_tu)
         elif ki_tu.isdigit():
             chars_by_key.append(ki_tu)
@@ -190,7 +190,7 @@ def spell_input():
                 typewriter(f"Hex của kí tự {char} là {hex_code}", 0.03)
                 hex_list.append(hex_code)
             except Exception as e:
-                typewriter(f"Lỗi! Không thể tìm thấy kí tự {char}. Lỗi bắt được: {e}", 0.03)
+                typewriter(f"a. Lỗi! Không thể tìm thấy kí tự {char}. Lỗi bắt được: {e}", 0.03)
     with open("chars_key.json", "r") as f:
         all_key_chars = json.load(f)
         for char in chars_by_key:
@@ -198,7 +198,7 @@ def spell_input():
                 key = all_key_chars[char]
                 found_keys[char] = key
             except Exception as e:
-                typewriter(f"Lỗi! Không thể tìm thấy phím của kí tự {char}. Lỗi bắt được: {e}", 0.03)
+                typewriter(f"b. Lỗi! Không thể tìm thấy phím của kí tự {char}. Lỗi bắt được: {e}", 0.03)
     for byte in hex_list:
         for ki_tu_hex in byte:
             if ki_tu_hex in ["A", "B", "C", "D", "E", "F"]:
